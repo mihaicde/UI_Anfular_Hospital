@@ -1,0 +1,19 @@
+<h4 mat-dialog-title>Order {{data.name}}</h4>
+
+<span> Available quantity: {{data.qty}}</span>
+
+<div [formGroup]="newReqForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Your Order</mat-label>
+        <input id="qty" matInput formControlName="qty">
+    </mat-form-field>
+    <br>
+    <div *ngIf="err" style="color:red">
+        Quantity too big
+    </div>
+    <button mat-button color="primary"  (click)="onSumbit()">Add to cart</button>
+    
+  
+</div>
+
+
